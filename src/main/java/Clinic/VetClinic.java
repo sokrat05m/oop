@@ -27,7 +27,14 @@ public class VetClinic {
     public void addPersonal(AbstractPersonal personal) {
         this.personal.add(personal);
     }
+    public void dischargePatient(Animal patient){
+        patients.remove(patient);
+    }
+    public void fireWorker(AbstractPersonal personal) {
+        this.personal.remove(personal);
+    }
     public void giveSalary (AbstractPersonal person) {
         System.out.println("Работник " + person.getFullName() + " получил зарплату");
     }
+
 }
