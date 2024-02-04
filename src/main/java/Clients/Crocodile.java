@@ -2,18 +2,19 @@ package Clients;
 
 import java.time.LocalDate;
 
-public class Dog extends Animal implements Goable{
-    public Dog(String nickname, Owner owner, LocalDate birthDate, Illness illness) {
+public class Crocodile extends Animal implements Swimable {
+
+    public Crocodile(String nickname, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickname, owner, birthDate, illness);
     }
 
-    public Dog() {
+    public Crocodile() {
         super();
     }
 
     @Override
     public void eat() {
-        System.out.println(nickname + "ест кролика");
+        System.out.println(nickname + " ест мясо");
     }
 
     @Override
