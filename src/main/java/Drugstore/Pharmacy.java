@@ -9,12 +9,11 @@ import java.util.function.Consumer;
 public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>{
     private List<Component> components = new ArrayList<>();
     private int index;
-    private int power;
+
 
     public void addComponents(Component ... components){
         for (Component c : components){
             this.components.add(c);
-            this.power += c.getPower();
         }
     }
 
@@ -36,7 +35,15 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>{
 
     @Override
     public int compareTo(Pharmacy o) {
-        return Integer.compare(this.power, o.power);
+        int oPower = 0;
+        for(Component c : o){
+            oPower += c.getPower();
+        }
+        int thisPower = 0;
+        for (Component c : this.components){
+            thisPower += c.getPower();
+        }
+        return Integer.compare(thisPower, oPower);
     }
 
     @Override
